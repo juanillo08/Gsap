@@ -1,0 +1,1135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --clr-dark: #2b2b2b;
+  --clr-light: #f5f5f5;
+  --clr-primary: #FFA700;
+  --font: "Poppins", sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  font,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+    list-style: none;
+  }
+  
+  html {
+    font-size: 62.5%;
+    height: 100%;
+  }
+  
+  body {
+    color: var(--clr-dark);
+    font-family: var(--font);
+    font-size: 1.6rem;
+    overflow-x: hidden;
+    line-height: 1.4;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section,
+  time {
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  /* ASSETS */
+.btn__primary {
+    border: solid 1px var(--clr-primary);
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    padding: 1.5rem 3rem;
+    border-radius: 40px;
+}
+.btn__primary:hover {
+    background-color: transparent;
+    color: var(--clr-primary);
+}
+.btn__black {
+    border: solid 1px var(--clr-dark);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 1.5rem 3rem;
+    border-radius: 40px;
+}
+.btn__black:hover {
+    background-color: transparent;
+    color: var(--clr-dark);
+}
+
+  /* HEADER */
+  .header {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 0;
+  }
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 12rem;
+  }
+  .branding {
+    gap: 2rem;
+    display: flex;
+  }
+  .branding img {
+    width: 5rem;
+  }
+  .branding ul {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    gap: 1rem;
+  }
+  .branding ul li:nth-child(2){
+    color: var(--clr-primary);
+  }
+  .menu  {
+    display: flex;
+    align-items: center;
+  }
+  .header__wrapper nav ul {
+    display: flex;
+    gap: 5rem;
+    padding-top: 5rem;
+  }
+  nav ul li a {
+    color: var(--clr-light);
+  }
+  nav ul li a:hover {
+    color: var(--clr-primary);  
+  }
+   .toggle__menu {
+    display: none;
+  } 
+  .toggle__menu span {
+    display: inline-block;
+    background-color: var(--clr-light);
+    content: " ";
+    width: 3rem;
+    height: 0.3rem;
+    border-radius: 1rem;
+  }
+  #active {
+    color: var(--clr-primary);
+  }
+  /* HEADER MOBILE */
+  @media screen and (max-width: 580px) {
+    .header__wrapper {
+        height: 10rem;
+      }
+      .branding {
+        gap: 2rem;
+        display: flex;
+      }
+      .branding img {
+        width: 5rem;
+      }
+      .branding ul {
+        font-size: 2rem;
+      }
+      .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--clr-dark);
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        right: -100rem;
+        z-index: 999;
+        transform: translateY(-18rem);
+        margin-top: 28rem;
+        transition: 0.5s ease-in-out;
+      }
+      .header__nav.open {
+        right: 0;
+      }
+      .toggle__menu {
+        cursor: pointer;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+       
+      } 
+      .toggle__menu span {
+        transition: 0.5s ease-in-out;
+      }
+      .toggle__menu.open span:first-child{
+        transform: translate(0, 10px) rotate(225deg);
+      } 
+      .toggle__menu.open span:nth-child(2){
+        opacity: 0;
+      } 
+      .toggle__menu.open span:last-child{
+        transform: translate(0, -6px) rotate(-225deg);
+      } 
+  }
+
+ /* HEADER SAMSUNG A24 */
+ @media screen and (max-width: 384px) {
+  .branding {
+    gap: 1rem;
+    display: flex;
+  }
+  .branding img {
+    width: 4rem;
+  }
+  .branding ul {
+    font-size: 1.5rem;
+    gap: 0.5rem;
+  }
+}
+
+  /* HOME BANNER */
+  .homeBanner {
+    background-color: var(--clr-light);
+    padding-top: 19rem;
+    padding-bottom: 9rem;
+  }
+  .homeBanner__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .homeBanner__text {
+    align-content: center;
+     max-width: 50rem; 
+     text-align: justify;
+  }
+  .homeBanner__text h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    padding-bottom: 2rem;
+  }
+  .homeBanner__text p {
+    padding-bottom: 5rem;
+  }
+
+  /* HOME BANNER MOBILE */
+  @media screen and (max-width: 580px) {
+      .homeBanner__wrapper img {
+        display: none;
+    }
+      .homeBanner__text {
+        align-content: center;
+         max-width: 50rem; 
+         text-align: justify;
+      }
+      .homeBanner__text h1 {
+        text-align: center;
+        font-size: 6rem;
+        font-weight: 700;
+        color: var(--clr-primary);
+        padding-bottom: 2rem;
+      }
+      .homeBanner__text p {
+        padding-bottom: 5rem;
+      }
+  }
+   /* HOME BANNER SAMSUNG A24 */
+ @media screen and (max-width: 384px) {
+ .homeBanner__text a {
+  margin-left: 5.5rem
+ }
+}
+
+  /* SERVICES */
+  .services {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 6rem 0;
+  }
+  .services__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+  }
+  .services__card{
+    flex-direction: column;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    max-width: 40rem;
+    gap: 5rem;
+  }
+  .services__card img {
+    width: 5rem;
+  }
+  .services__card h3 {
+    text-align: center;
+    color: var(--clr-primary);
+  }
+  .services__card img {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* SERVICES MOBILE */
+  @media screen and (max-width: 580px) {
+    .services__wrapper {
+        gap: 5rem;
+      }
+  }
+
+  /* ABOUT ME */
+  .aboutMe {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    padding: 9rem 0;
+    position: relative;
+  }
+  .aboutMe__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .aboutMe__img img {
+    position: absolute;
+    bottom: 3rem; 
+  }
+  .aboutMe__img img:nth-child(2) {
+    width: 47.7rem;
+    opacity: 0.5;
+  }
+  .aboutMe__text {
+    display: flex;
+    max-width: 75rem;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .aboutMe__text h2 {
+    color: var(--clr-primary);
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 5rem;
+  }
+  .aboutMe__text p {
+    padding-bottom: 5rem;
+  }
+
+  /* ABOUT ME MOBILE */
+  @media screen and (max-width: 580px) {
+    .aboutMe__img img{
+      top: 1.5rem;
+      width: 40rem;
+    }
+    .aboutMe__img img:nth-child(2) {
+      width: 40rem;
+    }
+    .aboutMe__wrapper {
+      flex-direction: column;
+    }
+    .aboutMe__text {
+      margin-top: 35rem;
+    }
+  }
+
+     /* ABOUT ME SAMSUNG A24 */
+ @media screen and (max-width: 384px) {
+  .aboutMe__img img{
+    width: 30rem;
+    left: 4rem;
+  }
+  .aboutMe__img img:nth-child(2) {
+    width: 30rem;
+  }
+  .aboutMe__text {
+    margin-top: 25rem;
+  }
+  .aboutMe__text p {
+    padding-bottom: 1rem;
+  }
+}
+  /* LATEST TRENDS */
+  .latestTrends {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 6rem 0;
+  }
+  .latestTrends__title h2 {
+    color: var(--clr-primary);
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  .latestTrends__title h4 {
+    font-size: 2rem;
+    padding-bottom: 6rem;
+  }
+  .latestTrends__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+  .latestTrends__card {
+    max-width: 40rem;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border-radius: 20px;
+  }
+  .latestTrends__card--text {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .latestTrends__card h3 {
+    font-weight: 600;
+  }
+  .latestTrends__card h3, .latestTrends__card a {
+    color: var(--clr-primary);
+  }
+  .latestTrends__card img {
+    width: 40rem;
+  }
+
+ /* LATEST TRENDS MOBILE */
+ @media screen and (max-width: 580px) {
+    .latestTrends__cards {
+        gap: 3rem;
+        padding-top: 4rem;
+      }
+      .latestTrends__title h2 {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+      .latestTrends__title h4 {
+        font-size: 1.5rem;
+      }
+  }
+
+  /* CALL TO ACTION */
+  .cta {
+    background-color: var(--clr-primary);
+    padding: 6rem 0;
+  }
+  .cta__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .cta__wrapper h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .cta__wrapper p {
+    font-size: 1.3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* CALL TO ACTION MOBILE */
+  @media screen and (max-width: 580px) {
+    .cta__wrapper h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      .cta__wrapper p {
+        font-size: 1.2rem;
+      }
+  }
+
+     /* CALL TO ACTION SAMSUNG A24 */
+     @media screen and (max-width: 384px) {
+      .cta {
+        padding: 5rem 0;
+      }
+      .cta__wrapper h2 {
+        text-align: center;
+        padding-bottom: 1rem;
+      }
+      .cta__wrapper p {
+        text-align: center;
+        padding-bottom: 3rem;
+      }
+    }
+
+  /* FOOTER */
+  .footer {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 3rem;
+  }
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__wrapper ul{
+    display: flex;
+    gap: 1.5rem;
+  }
+  .footer__wrapper ul li a{
+    color: var(--clr-light);
+    font-size: 2rem;
+  }
+
+   /* FOOTER MOBILE */
+   @media screen and (max-width: 580px) {
+    
+    .footer__wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    .footer__wrapper p {
+        font-size: 1.5rem;
+    }
+  }
+   /* FOOTER MOBILE */
+   @media screen and (max-width: 384px) {
+    
+    .footer__wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    .footer__wrapper p {
+        font-size: 1.5rem;
+    }
+  }
+
+   /* FOOTER SAMSUNG A24 */
+   @media screen and (max-width: 384px) {
+    
+    .footer__wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    .footer__wrapper p {
+        font-size: 1.3rem;
+    }
+  }
+
+  /* ABOUT BANNER */
+  .aboutBanner {
+    background-color: var(--clr-light);
+    padding-top: 17rem;
+    padding-bottom: 5rem  ;
+  }
+  .aboutBanner .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutBanner span {
+    text-align: center;
+  }
+  i.fa-solid.fa-chevron-down {
+    color: var(--clr-primary);
+    font-size: 4rem;
+    padding-top: 7rem;
+    cursor: pointer;
+  }
+  .aboutBanner__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .aboutBanner__text {
+    align-content: center;
+     max-width: 50rem; 
+     text-align: justify;
+  }
+  .aboutBanner__text h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    padding-bottom: 2rem;
+  }
+  .aboutBanner__text p {
+    padding-bottom: 5rem;
+  }
+  .aboutBanner__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .aboutBanner__icons li a i{
+    color: var(--clr-primary);
+    font-size: 2.5rem;
+  }
+
+ /* ABOUT BANNER MOBILE */
+ @media screen and (max-width: 580px) {
+  .aboutBanner__container {
+    display: flex;
+    flex-direction: column;
+  }
+  i.fa-solid.fa-chevron-down {
+    color: var(--clr-primary);
+    font-size: 3rem;
+    padding-top: 5rem;
+    cursor: pointer;
+  }
+  .aboutBanner__wrapper {
+    flex-direction: column-reverse;
+  }
+  .aboutBanner__img  {
+    padding-bottom: 5rem;
+  }
+  .aboutBanner__img img {
+    width: 40rem;
+  }
+  .aboutBanner__text {
+    align-content: center;
+     max-width: 50rem; 
+     text-align: justify;
+  }
+  .aboutBanner__text h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    padding-bottom: 2rem;
+  }
+  .aboutBanner__text h3 {
+    font-size: 1.5rem;
+  }
+  .aboutBanner__text p {
+    padding-bottom: 5rem;
+  }
+  .aboutBanner__icons {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+  .aboutBanner__icons li a i{
+    color: var(--clr-primary);
+    font-size: 2rem
+  }
+ }
+
+  /* RECENT PROJECTS */
+  .recentProjects {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 6rem 0;
+  }
+  .recentProjects__title {
+    padding-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 8rem;
+  }
+  .recentProjects__title h2{
+    color: var(--clr-primary);
+    font-size: 4rem ;
+    font-weight: 600;
+  }
+  .recentProjects__title p{
+    font-size: 1.8rem ;
+  }
+  .recentProjects__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 40rem);
+    gap: 5rem;
+  justify-content: center;
+  }
+  .recentProjects__card{
+    border-radius: 3rem;
+    background-color: var(--clr-light);
+    flex-direction: column;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    max-width: 40rem;
+    gap: 2rem;
+  }
+  .recentProjects__card img {
+    width: 40rem;
+  }
+  .recentProjects__card--text {
+    padding: 0 2rem;
+  }
+  .recentProjects__card h3 {
+    color: var(--clr-primary);
+    align-self: flex-start;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .recentProjects__card p {
+    color: var(--clr-dark);
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+  }
+
+   /* RECENT PROJECTS SAMSUNG A24 */
+   @media screen and (max-width: 384px) {
+    .recentProjects__title {
+      padding-left: 0;
+      gap: 1rem;
+      text-align: center;
+      padding-bottom: 6rem;
+    }
+    .recentProjects__title h2{
+      font-size: 2.5rem ;
+    }
+    .recentProjects__title p{
+      font-size: 1.5rem ;
+    }
+    .recentProjects__cards {
+      grid-template-columns: repeat(1, 40rem);
+      justify-items: center;
+    } 
+    .recentProjects__card{
+      max-width: 30rem;
+    }
+    .recentProjects__card img {
+      width: 30rem;
+    }
+    .recentProjects__card p {
+      padding-bottom: 3rem;
+    }
+   }
+
+  /* CONTACT */
+  .contact {
+    padding-top: 19rem;
+    border: solid 1px var(--clr-light);
+    border-width: 0 0 1px 0;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding-bottom: 12.9rem;
+  }
+  .contact__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact__wrapper .contact__text {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+  }
+  .contact__text .contact__title {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    gap: 4rem;
+    padding-left: 1.5rem;
+  }
+  .contact__text .contact__title h2 {
+    font-size: 5rem;
+    color: var(--clr-primary);
+    font-weight: 700;
+  }
+  .contact__text .contact__info ul {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+  }
+  .contact__text .contact__info ul li i {
+    color: var(--clr-primary);
+    font-size: 3rem;
+  }
+  .contact__text .contact__icons {
+    padding-top: 2rem;
+  }
+  .contact__text .contact__icons ul{
+    display: flex;
+    gap: 1.5rem;
+    font-size: 2rem;
+    padding-left: 1.5rem; 
+  }
+  .contact__text .contact__icons ul li a i {
+    color: var(--clr-light);
+  }
+  .contact__form {
+    display: flex;
+    margin-top: 10rem;
+  }
+  .contact__form form {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact__form form input {
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    width: 70rem;
+    background-color: var(--clr-light);
+    font: var(--font);
+  }
+  .contact__form form input:focus {
+    outline: 0 ;
+  }
+  .contact__form form input::placeholder {
+    font-weight: 600;
+  }
+  .contact__form form textarea::placeholder {
+    font-weight: 600;
+  }
+  .contact__form form textarea:focus {
+    outline: 0;
+  }
+  .contact__form form textarea {
+    width: 70rem;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    resize: none;
+    background-color: var(--clr-light);
+    height: 17rem;
+    font: var(--font);
+  }
+  .contact__form form a {
+    width: fit-content;
+    margin-left: 53rem;
+  }
+
+   /* CONTACT MOBILE */
+ @media screen and (max-width: 580px) {
+  .contact__wrapper {
+    flex-direction: column;
+  }
+  .contact__wrapper .contact__text {
+    text-align: center;
+  }
+  .contact__text .contact__title {
+    gap: 2rem;
+  }
+  .contact__text .contact__title p {
+    text-align: justify;
+  }
+  .contact__text .contact__info ul {
+    padding: 1rem;
+  }
+  .contact__text .contact__icons ul{
+    justify-content: center;
+    gap: 3rem;
+  }
+  .contact__form form {
+    align-items: center;
+  }
+  .contact__form form input {
+    width: 30rem;
+  }
+  .contact__form form textarea {
+    background-color: var(--clr-light);
+    height: 17rem;
+    width: 30rem;
+  }
+  .contact__form form a {
+    width: fit-content;
+    margin-left: 0;
+  }
+ }
+
+  /* CONTACTS SAMSUNG A24 */
+  @media screen and (max-width: 384px) {
+    .contact__text .contact__title {
+      gap: 1rem;
+    }
+    .contact__wrapper .contact__text {
+      max-width: 35rem;
+    }
+    .contact__text .contact__icons ul{
+      font-size: 2rem;
+      padding-left: 0; 
+    }
+    .contact__text .contact__info ul {
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+  }
+
+ /* UPDATES */
+.updates {
+  padding-top: 17rem;
+  padding-bottom: 7rem;
+}
+.updates__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+}
+.updates__left {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+.updates__title {
+  padding-bottom: 6rem;
+}
+.updates__title h1{
+  color: var(--clr-primary);
+  font-size: 5rem;
+  font-weight: 700;
+} 
+.updates__title p{
+  font-size: 1.8rem;
+}
+.updates__left {
+  max-width: 70rem;
+}
+.updates__content img {
+  padding-bottom: 1rem;
+}
+.updates__content ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5rem;
+}
+.updates__content ul li {
+  display: flex;
+  gap: 1.5rem;
+}
+.updates__content ul li p {
+  font-size: 1.3rem;
+}
+.updates__content h3 {
+  color: var(--clr-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 3rem 0;
+}
+.updates__content p:nth-child(4) {
+  padding-bottom: 3rem ;
+}
+.updates__content a {
+  color: var(--clr-primary);
+}
+.line {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  height: 1px;
+  background-color: #d4cece;
+}
+.updates__right .updates__categories h3 {
+  font-size: 2.5rem;
+  color: var(--clr-primary);
+  font-weight: 600;
+  padding-bottom: 4rem ;
+} 
+.updates__categories table {
+  font-size: 1.5rem;
+}
+.updates__categories table tr {
+  display: flex;
+  gap: 26rem;
+  justify-content: space-between;
+} 
+.updates__categories table tr td {
+  padding: 1rem 0;
+}
+.updates__recent h3 {
+  color: var(--clr-primary);
+  font-size: 2.5rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  font-weight: 600;
+}
+.updates__recent--details {
+  padding: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+}
+.updates__recent--text {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f3f3;
+}
+.updates__recent--text h4 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 4rem;
+}
+.updates__tags h3 {
+  color: var(--clr-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 15rem;
+  padding-bottom: 2rem;
+}
+.updates__tags td a:hover {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+.updates__tags .row {
+  display: flex;
+  padding: 1rem 0;
+}
+.updates__tags .row a {
+  color: var(--clr-dark);
+  border: solid 1px var(--clr-dark);
+  padding: 1rem 2rem;
+  border-radius: 20rem;
+  margin: 0 1rem;
+}
+.updates__tags .row a:hover {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+ /* UPDATES MOBILE */
+ @media screen and (max-width: 580px) {
+  .line {
+    display: none;
+  }
+  .updates__wrapper {
+    display: grid;
+    grid-template-columns: unset;
+    grid-template-rows: 1fr;
+  }
+  .updates__right .updates__categories h3 {
+    padding-top: 6rem;
+  } 
+  .updates__recent h3 {
+    padding-bottom: 2rem;
+    padding-top: 5rem;
+  }
+  .updates__tags h3 {
+    padding-top: 5rem;
+  }
+ }
+
+ /* UPDATES SAMSUNG A24 */
+ @media screen and (max-width: 384px) {
+  .updates__title {
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+  .updates__title h1{
+    font-size: 4rem;
+  } 
+  .updates__title p{
+    text-align: justify;
+    font-size: 1.5rem;
+  }
+  .updates__left {
+    max-width: 70rem;
+  }
+  .updates__content img {
+    padding-bottom: 1rem;
+  }
+  .updates__content ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5rem;
+  }
+  .updates__content ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .updates__content ul li p {
+    font-size: 1rem;
+  }
+  .updates__wrapper {
+   justify-items: center;
+  }
+ }
+
+ #page-transition {
+  position:  fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100vh;
+  transform: scaleY(0);
+  background-color: #000;
+ }
